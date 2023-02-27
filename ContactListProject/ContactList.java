@@ -1,3 +1,4 @@
+package ContactListProject;
 public class ContactList {
     private Contact[] list;
     private int sizeOfTheList;
