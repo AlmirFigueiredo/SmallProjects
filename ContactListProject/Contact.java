@@ -8,7 +8,19 @@ public class Contact {
     //Constructors:
     public Contact(){};
     
-
+    //Methods:
+    @Override
+    public boolean equals(Object other) {
+        if(this == other) {
+            return true;
+        }
+        if(!(other instanceof Contact)) {
+            return false;
+        }
+        Contact otherObj = (Contact)other;
+        return ((otherObj.name.equals(this.name))&&(otherObj.email.equals(this.email))
+        &&(otherObj.address.equals(this.address)&&(otherObj.phone.equals(this.phone))));
+    }
 
 
 
