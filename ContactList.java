@@ -3,6 +3,13 @@ public class ContactList {
     private int sizeOfTheList;
     private int quantityOfContacts;
 
-    public ContactList(){}
-    
+    //Default constructor:
+    public ContactList(){
+        this.quantityOfContacts = 0;
+        this.sizeOfTheList = 10; //I guess is a good size for a new contactList
+        this.list = new Contact[10];
+    }
+
+
+
 }
