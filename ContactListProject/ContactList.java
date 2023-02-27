@@ -1,7 +1,5 @@
 package ContactListProject;
 
-import javax.lang.model.element.QualifiedNameable;
-
 public class ContactList {
     private Contact[] list;
     private int sizeOfTheList;
@@ -74,7 +72,6 @@ public class ContactList {
         this.list[this.quantityOfContacts-1] = null;
     }
 
-    
     //Getters:
     public Contact[] getList() {
         return list;
