@@ -6,7 +6,12 @@ public class Main {
         Scanner input = new Scanner(System.in);
         showMainOptions();
         int option = input.nextInt();
-        while(option != '1' )
+        boolean isValid = isValidOption(option, 6);
+        while(!isValid) {
+            option = input.nextInt();
+            isValid = isValidOption(option, 6);
+        }
+        
 
 
         input.close();
