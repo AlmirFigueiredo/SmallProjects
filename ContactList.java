@@ -6,9 +6,35 @@ public class ContactList {
     //Default constructor:
     public ContactList(){
         this.quantityOfContacts = 0;
-        this.sizeOfTheList = 10; //I guess is a good size for a new contactList
+        this.sizeOfTheList = 10; //I guess is a good initial size for a new contactList
         this.list = new Contact[10];
     }
+    //Methods:
+
+    //Methods to add a new contact:
+    public void addContact(Contact newContact) {
+        boolean isFull = !(isThereSpace());
+        if(isFull) {
+            increaseSizeOfTheList();
+        }
+        this.list[this.quantityOfContacts] = newContact;
+    }
+    public boolean isThereSpace() {
+        if(this.sizeOfTheList == quantityOfContacts) {
+            return false;
+        }
+        return true;
+    }
+    public void increaseSizeOfTheList() {
+        Contact[] temp = new Contact[2*this.sizeOfTheList];
+        for(int i = 0; i < this.sizeOfTheList; i++) {
+            temp[i] = this.list[i];
+        }
+        this.list = temp;
+        this.sizeOfTheList *= 2;
+    }
+
+
 
     //Getters:
     public Contact[] getList() {
