@@ -1,4 +1,7 @@
 package ContactListProject;
+
+import javax.lang.model.element.QualifiedNameable;
+
 public class ContactList {
     private Contact[] list;
     private int sizeOfTheList;
@@ -36,21 +39,39 @@ public class ContactList {
     }
 
     //Methods to remove a contact:
-    public int isThereContact(Contact removeContact) {
+    public int contactPosition(Contact removeContact) {
         for(int i = 0; i < this.quantityOfContacts; i++) {
             if(list[i].equals(removeContact)) {
                 return i;
             }
         }
         System.out.println("Contact not found!");
-        return -1;
+        return -1; //If the return is equals -1 means that the position doesnt exist
     }
     public void removeContact(Contact removeContact) {
-        int isThereContact = isThereContact(removeContact);
-        if(isThereContact == -1) {
+        int contactPostion = contactPosition(removeContact); //
+        if(contactPostion == -1) {
             System.out.println("Error, contact not found!");
+        } else {
+            //It's necessary to create a temporary array to stores the contacts after the contact that will be elimate
+            shiftLeft(contactPostion);
+            this.quantityOfContacts--;
         }
 
+    }
+    public void shiftLeft(int contactPosition) {
+        Contact[] afterContacts = new Contact[this.quantityOfContacts-contactPosition]; //The size is equals all the contacts - the current position that will be exclude
+        int j = 0;
+        for(int i = contactPosition+1; i < quantityOfContacts; i++) {
+            afterContacts[j] = this.list[i];
+            j++;
+        }
+        j = 0;
+        for(int i = contactPosition; i < quantityOfContacts; i++) {
+            this.list[i] = afterContacts[j];
+            j++;
+        }
+        this.list[this.quantityOfContacts-1] = null;
     }
 
     
