@@ -35,8 +35,25 @@ public class ContactList {
         this.sizeOfTheList *= 2;
     }
 
+    //Methods to remove a contact:
+    public int isThereContact(Contact removeContact) {
+        for(int i = 0; i < this.quantityOfContacts; i++) {
+            if(list[i].equals(removeContact)) {
+                return i;
+            }
+        }
+        System.out.println("Contact not found!");
+        return -1;
+    }
+    public void removeContact(Contact removeContact) {
+        int isThereContact = isThereContact(removeContact);
+        if(isThereContact == -1) {
+            System.out.println("Error, contact not found!");
+        }
 
+    }
 
+    
     //Getters:
     public Contact[] getList() {
         return list;
