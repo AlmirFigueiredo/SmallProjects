@@ -36,8 +36,38 @@ public class Main {
                         positionToRemove--;
                         list.removeContactIndex(positionToRemove);
                         break;
+                case 4: showContactList(list);
+                        System.out.println("Enter the number that represents the contact that you want to change any information:");
+                        int positionToChange = input.nextInt();
+                        positionToChange--;
+                        System.out.println("Which information do you want to change?");
+                        System.out.println("(1)Name\n(2)Email\n(3)Address\n(4)Phone");
+                        int changeOption = input.nextInt();
+                        input.nextLine();
+                        if(changeOption == 1) {
+                            System.out.println("Choose the new name:");
+                            String newName = input.nextLine();
+                            list.getList()[positionToChange].setName(newName);
+                        } else if(changeOption == 2) {
+                            System.out.println("Choose the new email:");
+                            String newEmail = input.nextLine();
+                            list.getList()[positionToChange].setEmail(newEmail);
+                        } else if(changeOption == 3) {
+                            System.out.println("Choose the new Address:");
+                            String newAddress = input.nextLine();
+                            list.getList()[positionToChange].setAddress(newAddress);
+                        } else if(changeOption == 4) {
+                            System.out.println("Choose the new phone number:");
+                            String newPhone = input.nextLine();
+                            list.getList()[positionToChange].setPhone(newPhone);
+                        } else {
+                            System.out.println("Option not found!");
+                        }
+                        break;
+                
 
                 default: System.out.println("ERROR");
+
             }
             showMainOptions();
             option = input.nextInt();
@@ -77,6 +107,6 @@ public class Main {
             }
             System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         }
-
     }
+
 }
