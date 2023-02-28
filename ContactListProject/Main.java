@@ -17,7 +17,8 @@ public class Main {
                 case 1: showContactList(list);
                         break; 
 
-                case 2: System.out.println("Enter the name of the contact:");
+                case 2: input.nextLine();
+                        System.out.println("Enter the name of the contact:");
                         String name = input.nextLine();
                         System.out.println("Enter the email of the contact:");
                         String email = input.nextLine();
@@ -27,8 +28,16 @@ public class Main {
                         String phone = input.nextLine();
                         Contact newContact = new Contact(name, email, address, phone);
                         list.addContact(newContact);
+                        break;
 
                 default: System.out.println("ERROR");
+            }
+            showMainOptions();
+            option = input.nextInt();
+            isValid = isValidOption(option, 6);
+            while(!isValid) {
+                option = input.nextInt();
+                isValid = isValidOption(option, 6);
             }
         }
 
@@ -49,6 +58,9 @@ public class Main {
     }
     public static void showContactList(ContactList list) {
         int quantityOfContacts = list.getQuantityOfContacts();
+        if(quantityOfContacts == 0) {
+            System.out.println("The contact list is empty!!");
+        }
         for(int i = 0; i < quantityOfContacts; i++) {
             String formatString = list.formatContactList()[i];
             System.out.printf("(%d) %s\n", i, formatString);
