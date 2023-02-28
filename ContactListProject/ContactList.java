@@ -71,6 +71,13 @@ public class ContactList {
         }
         this.list[this.quantityOfContacts-1] = null;
     }
+    public String[] formatContactList() {
+        String[] res = new String[this.quantityOfContacts];
+        for(int i = 0; i < this.quantityOfContacts; i++) {
+            res[i] = this.list[i].toString();
+        }
+        return res;
+    }
 
     //Getters:
     public Contact[] getList() {
