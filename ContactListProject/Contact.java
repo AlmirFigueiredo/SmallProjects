@@ -8,6 +8,13 @@ public class Contact {
     //Constructors:
     public Contact(){};
     
+    public Contact(String name, String email, String address, String phone) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+    }
+
     //Methods:
     @Override
     public boolean equals(Object other) {
