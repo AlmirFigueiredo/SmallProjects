@@ -60,10 +60,16 @@ public class Main {
         int quantityOfContacts = list.getQuantityOfContacts();
         if(quantityOfContacts == 0) {
             System.out.println("The contact list is empty!!");
+        } else {
+            System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            System.out.println("======================================ContactList=======================================");
+            for(int i = 0; i < quantityOfContacts; i++) {
+                String formatString = list.formatContactList()[i];
+                System.out.printf("(%d) %s\n", (i+1), formatString);
+    
+            }
+            System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         }
-        for(int i = 0; i < quantityOfContacts; i++) {
-            String formatString = list.formatContactList()[i];
-            System.out.printf("(%d) %s\n", i, formatString);
-        }
+
     }
 }
