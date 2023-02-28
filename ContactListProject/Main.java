@@ -12,7 +12,12 @@ public class Main {
             option = input.nextInt();
             isValid = isValidOption(option, 6);
         }
-        
+        while(option != 6) {
+            switch(option) {
+                case 1: showContactList(list);
+                        break; 
+            }
+        }
 
 
         input.close();
@@ -28,6 +33,13 @@ public class Main {
             }
         }
         return false;
+    }
+    public static void showContactList(ContactList list) {
+        int quantityOfContacts = list.getQuantityOfContacts();
+        for(int i = 0; i < quantityOfContacts; i++) {
+            String formatString = list.formatContactList()[i];
+            System.out.printf("(%d) %s\n", i, formatString);
+        }
     }
 
     
