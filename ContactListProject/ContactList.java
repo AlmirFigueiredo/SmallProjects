@@ -48,15 +48,24 @@ public class ContactList {
         return -1; //If the return is equals -1 means that the position doesnt exist
     }
     public void removeContact(Contact removeContact) {
-        int contactPostion = contactPosition(removeContact); //
-        if(contactPostion == -1) {
+        int contactPosition = contactPosition(removeContact); //
+        if(contactPosition == -1) {
             System.out.println("Error, contact not found!");
         } else {
             //It's necessary to create a temporary array to stores the contacts after the contact that will be elimate
-            shiftLeft(contactPostion);
+            shiftLeft(contactPosition);
             this.quantityOfContacts--;
         }
 
+    }
+    public void removeContactIndex(int position) {
+        if(position == -1) {
+            System.out.println("Error, contact not found!");
+        } else {
+            //It's necessary to create a temporary array to stores the contacts after the contact that will be elimate
+            shiftLeft(position);
+            this.quantityOfContacts--;
+        }
     }
     public void shiftLeft(int contactPosition) {
         Contact[] afterContacts = new Contact[this.quantityOfContacts-contactPosition]; //The size is equals all the contacts - the current position that will be exclude
