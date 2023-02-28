@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        ContactList list = new ContactList();
         showMainOptions();
         int option = input.nextInt();
         boolean isValid = isValidOption(option, 6);
@@ -28,6 +29,6 @@ public class Main {
         }
         return false;
     }
-    
+
     
 }
