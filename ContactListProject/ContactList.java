@@ -20,6 +20,7 @@ public class ContactList {
             increaseSizeOfTheList();
         }
         this.list[this.quantityOfContacts] = newContact;
+        this.quantityOfContacts++;
     }
     public boolean isThereSpace() {
         if(this.sizeOfTheList == quantityOfContacts) {
