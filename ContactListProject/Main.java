@@ -29,6 +29,13 @@ public class Main {
                         Contact newContact = new Contact(name, email, address, phone);
                         list.addContact(newContact);
                         break;
+                case 3: showContactList(list);
+                        System.out.println("Enter the number that represents the contact that you want to remove:");
+                        input.nextLine();
+                        int positionToRemove = input.nextInt();
+                        positionToRemove--;
+                        list.removeContactIndex(positionToRemove);
+                        break;
 
                 default: System.out.println("ERROR");
             }
@@ -65,7 +72,7 @@ public class Main {
             System.out.println("======================================ContactList=======================================");
             for(int i = 0; i < quantityOfContacts; i++) {
                 String formatString = list.formatContactList()[i];
-                System.out.printf("(%d) %s\n", (i+1), formatString);
+                System.out.printf("\t(%d) %s\n", (i+1), formatString);
     
             }
             System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
