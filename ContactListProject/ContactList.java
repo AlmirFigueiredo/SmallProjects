@@ -29,7 +29,8 @@ public class ContactList {
         return true;
     }
     public void increaseSizeOfTheList() {
-        Contact[] temp = new Contact[2*this.sizeOfTheList];
+        int size = Math.max(this.sizeOfTheList*2, 1);
+        Contact[] temp = new Contact[size];
         for(int i = 0; i < this.sizeOfTheList; i++) {
             temp[i] = this.list[i];
         }

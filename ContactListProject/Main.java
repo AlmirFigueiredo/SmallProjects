@@ -64,7 +64,9 @@ public class Main {
                             System.out.println("Option not found!");
                         }
                         break;
-                
+                case 5:
+                        list.removeAllEmptyContacts();
+                        break;
 
                 default: System.out.println("ERROR");
 
