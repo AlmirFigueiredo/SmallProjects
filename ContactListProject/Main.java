@@ -16,11 +16,24 @@ public class Main {
             switch(option) {
                 case 1: showContactList(list);
                         break; 
+
+                case 2: System.out.println("Enter the name of the contact:");
+                        String name = input.nextLine();
+                        System.out.println("Enter the email of the contact:");
+                        String email = input.nextLine();
+                        System.out.println("Enter the address of the contact:");
+                        String address = input.nextLine();
+                        System.out.println("Enter the phone of the contact:");
+                        String phone = input.nextLine();
+                        Contact newContact = new Contact(name, email, address, phone);
+                        list.addContact(newContact);
+
+                default: System.out.println("ERROR");
             }
         }
 
 
-        input.close();
+        
     }
     public static void showMainOptions() {
         System.out.println("(1)Show contact list\n(2)Add an contact\n(3)Remove an contact\n(4)Change information(s) about some contact");
@@ -41,6 +54,4 @@ public class Main {
             System.out.printf("(%d) %s\n", i, formatString);
         }
     }
-
-    
 }
