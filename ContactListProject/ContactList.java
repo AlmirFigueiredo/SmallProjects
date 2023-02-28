@@ -90,7 +90,16 @@ public class ContactList {
         }
         return res;
     }
-
+    //Method to remove all empty contacts:
+    public void removeAllEmptyContacts() {
+        Contact[] temp = new Contact[this.quantityOfContacts];
+        for(int i = 0; i < temp.length; i++) {
+            temp[i] = this.list[i];
+        }
+        this.list = temp;
+        this.sizeOfTheList = this.quantityOfContacts;
+    }
+    //
     //Getters:
     public Contact[] getList() {
         return list;
