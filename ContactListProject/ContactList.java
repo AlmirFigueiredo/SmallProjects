@@ -54,6 +54,7 @@ public class ContactList {
         } else {
             //It's necessary to create a temporary array to stores the contacts after the contact that will be elimate
             shiftLeft(contactPosition);
+            System.out.println("Contact removed!");
             this.quantityOfContacts--;
         }
 
@@ -64,6 +65,7 @@ public class ContactList {
         } else {
             //It's necessary to create a temporary array to stores the contacts after the contact that will be elimate
             shiftLeft(position);
+            System.out.println("Contact removed!");
             this.quantityOfContacts--;
         }
     }
