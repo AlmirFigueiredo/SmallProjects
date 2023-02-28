@@ -21,8 +21,13 @@ public class Contact {
         return ((otherObj.name.equals(this.name))&&(otherObj.email.equals(this.email))
         &&(otherObj.address.equals(this.address)&&(otherObj.phone.equals(this.phone))));
     }
-
-
+    @Override
+    public String toString() {
+        String res = "";
+        res += "|Name: " + this.name + " |Email: " + this.email;
+        res += "|Adress: " + this.address + " |Phone: " + this.phone;
+        return res;
+    }
 
     //Getters:
     public String getAddress() {
