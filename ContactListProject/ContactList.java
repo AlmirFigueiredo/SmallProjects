@@ -100,7 +100,30 @@ public class ContactList {
         this.list = temp;
         this.sizeOfTheList = this.quantityOfContacts;
     }
-    //
+    //Method to exclude duplicated contacts:
+    public boolean isThereDuplicatedContacts() {
+        for(int i = 0; i < this.quantityOfContacts; i++) {
+            for(int j = i+i; j < this.quantityOfContacts; j++) {
+                if(this.list[i].equals(this.list[j])) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    public void removeAllDuplicated() {
+        boolean isPossibleToRemove = isThereDuplicatedContacts();
+        if(isPossibleToRemove) {
+            for(int i = 0; i < this.quantityOfContacts; i++) {
+                for(int j = i+1; j < this.quantityOfContacts; j++) {
+                    if(this.list[i].equals(this.list[j])) {
+                        removeContactIndex(j);
+                    }
+                }
+            }
+        }
+    }
     //Getters:
     public Contact[] getList() {
         return list;
