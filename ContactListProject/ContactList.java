@@ -93,12 +93,16 @@ public class ContactList {
     }
     //Method to remove all empty contacts:
     public void removeAllEmptyContacts() {
-        Contact[] temp = new Contact[this.quantityOfContacts];
-        for(int i = 0; i < temp.length; i++) {
-            temp[i] = this.list[i];
+        if(this.quantityOfContacts == this.sizeOfTheList) {
+            System.out.println("There's no empty contacts!");
+        } else {
+            Contact[] temp = new Contact[this.quantityOfContacts];
+            for(int i = 0; i < temp.length; i++) {
+                temp[i] = this.list[i];
+            }
+            this.list = temp;
+            this.sizeOfTheList = this.quantityOfContacts;
         }
-        this.list = temp;
-        this.sizeOfTheList = this.quantityOfContacts;
     }
     //Method to exclude duplicated contacts:
     public boolean isThereDuplicatedContacts() {
@@ -122,6 +126,8 @@ public class ContactList {
                     }
                 }
             }
+        } else {
+            System.out.println("There's no duplicated contacts!");
         }
     }
     //Getters:
