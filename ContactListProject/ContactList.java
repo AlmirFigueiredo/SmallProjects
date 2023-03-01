@@ -37,6 +37,14 @@ public class ContactList {
         this.list = temp;
         this.sizeOfTheList *= 2;
     }
+    public boolean isThereEqualContact(Contact newContact) {
+        for(int i = 0; i < this.quantityOfContacts; i++) {
+            if(this.list[i].equals(newContact)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     //Methods to remove a contact:
     public int contactPosition(Contact removeContact) {
